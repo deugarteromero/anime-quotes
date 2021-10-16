@@ -15,7 +15,7 @@ onMount( () => {
 });
 
 function getAnimeQuote(){
-  fetch('https://animechanapi.xyz/api/quotes/random')
+  fetch('https://animechan.vercel.app/api/random')
     .then( (res) => {
       if(res.ok){
         return res.json();
@@ -24,9 +24,10 @@ function getAnimeQuote(){
       };
     })
     .then( (data) => {
-      quoteText = data.data[0].quote;
-      character = data.data[0].character;
-      animeTitle = data.data[0].anime;
+      console.log(data);
+      quoteText = data.quote;
+      character = data.character;
+      animeTitle = data.anime;
     });
 };
 
